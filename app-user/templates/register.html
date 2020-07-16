@@ -1,0 +1,45 @@
+{% extends "dashboard.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block styles %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<!-- Write your comments here -->
+<!-- version 23 -->
+
+</style>
+{% endblock %}
+
+{% block content %}
+<h3>Register</h3>
+
+<div class="container">
+    <form action="/api/register/" method="POST">
+<!--  <form action="http://localhost:5000/api/register/" method="POST"> -->
+    <!-- <form action="register" method="POST"> -->
+    <!-- <form action = "http://localhost:5000/api/register/" -->
+    <!--   <label for="email">Email</label> -->
+    <!--   <input type="text" id="username" name="username" placeholder="Your username..">-->
+
+    <!--  <label for="psw">Password</label><br><br> -->
+    <!--  <input type="password" id="password" name="password" placeholder="Enter Password.."> -->
+    {{ form.hidden_tag() }}
+    {{ wtf.form_field(form.username) }}
+    {{wtf.form_field(form.email)}}
+    <br>
+    {{ wtf.form_field(form.password) }} <br>
+
+    <br>
+    <!--<p>{{ form.submit() }}</p>-->
+    <input type="submit" value="Register">
+
+  </form>
+</div>
+
+{% endblock %}

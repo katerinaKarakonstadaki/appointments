@@ -1,0 +1,14 @@
+{% extends "dashboard.html" %}
+{% block title %}
+HomePage
+{% endblock %}
+
+{% block styles %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+{% endblock %}
+
+{% block content %}
+<p>You are allowed book, cancel or reschedule your appointment booking throught the app. </p>
+{% endblock %}

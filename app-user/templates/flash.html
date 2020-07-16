@@ -1,0 +1,10 @@
+{% extends "application.html" %}
+{% block styles %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+{% endblock %}
+
+{% if error %}
+<p class=error><strong>Error:</strong> {{ error }}
+  {% endif %}
