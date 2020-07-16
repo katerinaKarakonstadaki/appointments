@@ -1,0 +1,14 @@
+docker login --username=vntoutsias
+
+docker build -f Dockerfile_user -t flask-user-v25 .
+docker tag $tag vntoutsias/flask-user-v25:latest
+docker push vntoutsias/flask-user-v25
+
+docker build -f Dockerfile_appointment -t flask-appointment-v27 .
+docker tag $tag vntoutsias/flask-appointment-v27:latest
+docker push vntoutsias/flask-appointment-v27
+
+
+docker build -f Dockerfile_notify -t flask-notify-v20 .
+docker tag $tag vntoutsias/flask-notify-v20:latest
+docker push vntoutsias/flask-notify-v20
